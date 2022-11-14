@@ -6,17 +6,38 @@ const imgMarkup = galleryItems.map(imageGallery =>
   <img class="gallery__image" src=${imageGallery.preview} alt=${imageGallery.description} /> </a>`).join("");
   
 galleryEl.insertAdjacentHTML('beforeend', imgMarkup);
-galleryEl.addEventListener('click', onClick);
 
-function onClick(event) {
-  event.stopPropagation();
-  event.preventDefault();
-  
-  if (event.target === event.currentTarget) {
-    return
-  }
-var lightbox = new SimpleLightbox('.gallery a', {
+let lightbox = new SimpleLightbox('.gallery a', {
 captionsData: 'alt',
-captionDeley: 250
-  })
-}
+ captionDeley: 250
+   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// galleryEl.addEventListener('click', onClick);
+
+// function onClick(event) {
+
+//   if (event.target.nodeName !== 'IMG') {
+//     return
+//   }
+// var lightbox = new SimpleLightbox('.gallery a', {
+// captionsData: 'alt',
+// captionDeley: 250
+//   })
+// }
