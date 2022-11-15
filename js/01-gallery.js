@@ -8,20 +8,20 @@ const imgMarkup = galleryItems.map(imageGallery =>  `<a class="gallery__link" hr
 galleryEl.insertAdjacentHTML('beforeend', imgMarkup);
 galleryEl.addEventListener('click', onClick);
 function onClick(event) {
-  event.preventDefault();
+event.preventDefault();
   if (event.target.nodeName !== 'IMG') {
     return
   }
 const instance = basicLightbox.create(`<img src=${event.target.dataset.source} >`)
 instance.show()
-galleryEl.addEventListener("keydown", (event) => {
-if (event.code === 'Escape') {
+  galleryEl.addEventListener("keydown", (event) => {
+    if (event.code === 'Escape') {
 instance.close();
-        }
+    }
+ galleryEl.removeEventListener("keydown", onClick);
 })
-   
 }
-  
+ 
     
 
 
